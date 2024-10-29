@@ -1,4 +1,4 @@
-# Backend API - Proyecto
+# Backend API - Proyecto Text Generator
 
 Esta API RESTful fue creada con Node.js, Express y Sequelize, y sirve como backend para la administración y manipulación de datos del proyecto Text Generator que simula un generador de texto con IA. .
 
