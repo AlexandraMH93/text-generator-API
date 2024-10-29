@@ -1,6 +1,6 @@
 # Backend API - Proyecto
 
-Este repositorio contiene el backend del proyecto Text Generator simulando un generador de texto con IA. Esta API RESTful fue creada con Node.js, Express y Sequelize, y sirve como backend para la administración y manipulación de datos de [descripción breve del propósito de la API].
+Esta API RESTful fue creada con Node.js, Express y Sequelize, y sirve como backend para la administración y manipulación de datos del proyecto Text Generator que simula un generador de texto con IA. .
 
 ## Tabla de Contenidos
 
