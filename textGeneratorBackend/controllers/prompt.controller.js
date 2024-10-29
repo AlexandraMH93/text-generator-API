@@ -2,6 +2,7 @@
 const bcrypt = require('bcryptjs')
 const jwt = require("jsonwebtoken")
 const Prompt = require('../models/prompt.model')
+const User = require('../models/user.model')
 
 async function getAllPrompts(req, res) {
   try {
@@ -84,4 +85,28 @@ const updatePrompt = async (req, res) => {
 
 }
 
-module.exports = { getAllPrompts, getPrompt, deletePrompt, updatePrompt }
+async function getPromptByUser(req, res) {
+  try {
+    const user = await User.findByPk(parseInt(req.params.id))
+
+      if (!user) return res.status(404).send('No user found');
+
+      const prompts = await Prompt.findAll({
+          where: { user_id: user.id },
+          // include: [{
+          //     model: TextGenerated,
+          //     as: 'promptId'
+          // }]
+      });
+
+      if (prompts && prompts.length > 0) {
+          return res.status(200).json(prompts);
+      } else {
+          return res.status(404).send('No prompts or generated texts found');
+      }
+  } catch (error) {
+      res.status(500).send(error.message);
+  }
+}
+
+module.exports = { getAllPrompts, getPrompt, deletePrompt, updatePrompt, getPromptByUser }

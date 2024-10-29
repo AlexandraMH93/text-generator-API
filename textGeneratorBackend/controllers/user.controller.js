@@ -145,25 +145,26 @@ async function UserCreatePromptAndTextGenerated(req, res) {
 
 async function getHistory(req, res) {
   try {
-    const user = res.locals.user
-    if (!user) return res.status(404).send('No user found')
+      const user = res.locals.user
 
-    const prompts = await user.getPrompts({
-        include: {
-            model: TextGenerated,
-            as: 'textGenerated'
-        }
-    });
+      if (!user) return res.status(404).send('No user found')
+ 
+      const prompts = await Prompt.findAll({
+          where: { user_id: user.id },
+          include: [{
+              model: TextGenerated,
+              
+          }]
+      })
 
-    if (prompts && prompts.length > 0) {
-        return res.status(200).json(prompts);
-    } else {
-        return res.status(404).send('No prompts or generated texts found');
-    }
-
-} catch (error) {
-    res.status(500).send(error.message);
-}
+      if (prompts && prompts.length > 0) {
+          return res.status(200).json(prompts)
+      } else {
+          return res.status(404).send('No prompts or generated texts found')
+      }
+  } catch (error) {
+      res.status(500).send(error.message)
+  }
 }
 
 module.exports = { getAllUsers, getUser, deleteUser, updateUser, updateProfile, deleteProfile, getProfile, UserCreatePromptAndTextGenerated, getHistory }
