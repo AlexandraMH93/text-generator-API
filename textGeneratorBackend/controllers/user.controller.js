@@ -143,7 +143,7 @@ async function UserCreatePromptAndTextGenerated(req, res) {
   }
 }
 
-async function getUserPromptsAndTextGenerateds(req, res) {
+async function getHistory(req, res) {
   try {
     const user = res.locals.user
     if (!user) return res.status(404).send('No user found')
@@ -166,4 +166,4 @@ async function getUserPromptsAndTextGenerateds(req, res) {
 }
 }
 
-module.exports = { getAllUsers, getUser, deleteUser, updateUser, updateProfile, deleteProfile, getProfile, UserCreatePromptAndTextGenerated, getUserPromptsAndTextGenerateds }
+module.exports = { getAllUsers, getUser, deleteUser, updateUser, updateProfile, deleteProfile, getProfile, UserCreatePromptAndTextGenerated, getHistory }
