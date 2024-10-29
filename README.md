@@ -112,7 +112,6 @@ Este backend utiliza una estructura de base de datos con las siguientes tablas p
 | POST   | `/user/signup`              | Registra un nuevo usuario                   |
 | POST   | `/user/login`               | Autentica un usuario                        |
 | POST   | `/user/promptAndTextGenerated` | Crea un prompt y un texto generado asociado |
-| GET    | `/user/prompts`             | Obtiene todos los prompts de un usuario     |
 | GET    | `/user/history`             | Obtiene el historial de prompts y textos generados de un usuario |
 
 Para obtener detalles específicos de cada endpoint, revisa la carpeta `routes` en el código fuente.
