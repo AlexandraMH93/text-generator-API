@@ -35,8 +35,8 @@ Para ejecutar este proyecto, necesitarás tener instalado:
 1. Clona el repositorio:
 
     ```bash
-    git clone https://github.com/tuusuario/nombre-repo-backend.git
-    cd nombre-repo-backend
+    git clone https://github.com/tuusuario/text-generator-API.git
+    cd text-generator-API
     ```
 
 2. Instala las dependencias:
@@ -95,6 +95,9 @@ Este backend utiliza una estructura de base de datos con las siguientes tablas p
 1. **Usuarios (`users`)**: Almacena los datos del usuario registrado.
 2. **Prompts (`prompts`)**: Almacena los prompts ingresados por los usuarios.
 3. **Textos Generados (`textGenerated`)**: Contiene los textos generados asociados a cada prompt.
+
+![image](https://github.com/user-attachments/assets/25a7e905-80df-4092-81fe-922846a6fc6a)
+
 
 ### Relaciones
 
