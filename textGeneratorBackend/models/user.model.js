@@ -16,11 +16,11 @@ const User = sequelize.define('user', {
     },
     birthDate: {
         type: DataTypes.DATEONLY,
-        allowNull: false,
+        allowNull: true,
     },
     gender: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     email: {
         type: DataTypes.STRING,
@@ -33,9 +33,8 @@ const User = sequelize.define('user', {
     },
     phone: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
-            notNull: { args: true, msg: "You must enter a phone number" },
             len: { args: [9, 11], msg: 'The phone number is not valid' },
             isInt: { args: true, msg: "You must enter a phone number" },
         }

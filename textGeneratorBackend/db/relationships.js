@@ -9,8 +9,8 @@ const DBRelationships = async() =>{
         User.hasMany(Prompt, { foreignKey:"user_id"})
         Prompt.belongsTo(User , {as:"userId",foreignKey:"user_id"})
 
-        Prompt.hasOne(TextGenerated ,{ foreignKey:"prompt_Id"})
-        TextGenerated.belongsTo(Prompt ,{as:"promptId" ,foreignKey:"prompt_Id"} )
+        Prompt.hasOne(TextGenerated ,{ foreignKey:"prompt_id"})
+        TextGenerated.belongsTo(Prompt ,{as:"promptId" ,foreignKey:"prompt_id"} )
 
 
     } catch (err) {
