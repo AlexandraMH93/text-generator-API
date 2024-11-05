@@ -15,7 +15,7 @@ Esta API RESTful fue creada con Node.js, Express y Sequelize, y sirve como backe
 ## Características
 
 - API RESTful desarrollada con Node.js y Express.
-- Autenticación de usuarios con [JWT o cualquier método que uses].
+- Autenticación de usuarios con [JWT].
 - Integración de Sequelize para el manejo de la base de datos MySQL.
 - Soporte para operaciones CRUD en los modelos principales (usuarios, prompts y textos generados).
 - Configuración de CORS para comunicación con el frontend.
